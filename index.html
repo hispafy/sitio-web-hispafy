@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Hispafy | Aumenta tus Ventas con Automatización e IA para Pymes</title>
+    <meta name="description" content="En Hispafy, ayudamos a Pymes a aumentar sus ventas y reducir costos con automatización, chatbots y agentes de IA. Potencia tu marketing y operaciones.">
+    <meta name="keywords" content="automatización ia, marketing digital, pymes, aumentar ventas, chatbot, agentes ia, chile">
+    <link rel="canonical" href="https://www.hispafy.com"> <!-- Reemplazar con tu dominio final -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='logoGradientFavicon' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%23c084fc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='15' cy='20' r='5' fill='url(%23logoGradientFavicon)'/%3E%3Ccircle cx='30' cy='10' r='3' fill='url(%23logoGradientFavicon)'/%3E%3Ccircle cx='30' cy='30' r='3' fill='url(%23logoGradientFavicon)'/%3E%3Cline x1='19' y1='17' x2='28' y2='12' stroke='url(%23logoGradientFavicon)' stroke-width='1.5'/%3E%3Cline x1='19' y1='23' x2='28' y2='28' stroke='url(%23logoGradientFavicon)' stroke-width='1.5'/%3E%3C/svg%3E">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hispafy.com"> <!-- Reemplazar con tu dominio final -->
+    <meta property="og:title" content="Hispafy | Aumenta tus Ventas con Automatización e IA para Pymes">
+    <meta property="og:description" content="Implementamos agentes de IA y flujos de trabajo inteligentes que capturan leads y convierten clientes 24/7, para que tú te dediques a crecer.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/c084fc?text=Hispafy+IA"> <!-- Reemplazar con una imagen atractiva para compartir -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.hispafy.com"> <!-- Reemplazar con tu dominio final -->
+    <meta property="twitter:title" content="Hispafy | Aumenta tus Ventas con Automatización e IA para Pymes">
+    <meta property="twitter:description" content="Implementamos agentes de IA y flujos de trabajo inteligentes que capturan leads y convierten clientes 24/7, para que tú te dediques a crecer.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/0a0a0a/c084fc?text=Hispafy+IA"> <!-- Reemplazar con una imagen atractiva para compartir -->
+
+    <!-- Scripts and Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e7eb;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .hero-bg {
+            position: relative;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 100%; /* Ensure cards have same height */
+            display: flex;
+            flex-direction: column;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Blog Modal Styles */
+        #blog-modal {
+            transition: opacity 0.3s ease-in-out;
+        }
+        #blog-modal-content {
+            transition: transform 0.3s ease-in-out;
+        }
+        .prose-dark {
+            color: #d1d5db;
+        }
+        .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 {
+            color: #f9fafb;
+        }
+        .prose-dark a {
+            color: #60a5fa;
+        }
+        .prose-dark strong {
+            color: #f9fafb;
+        }
+        .prose-dark blockquote {
+            border-left-color: #38bdf8;
+            color: #9ca3af;
+        }
+        /* FAQ Accordion */
+        .faq-question {
+            cursor: pointer;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        /* Chatbot Styles */
+        #chatbot-toggle {
+            transition: transform 0.3s ease;
+        }
+        #chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+        #chat-widget {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .chat-message {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Hispafy",
+      "image": "https://placehold.co/600x400/0a0a0a/c084fc?text=Hispafy+Logo",
+      "@id": "https://www.hispafy.com",
+      "url": "https://www.hispafy.com",
+      "telephone": "",
+      "email": "contacto@hispafy.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Santiago",
+        "addressCountry": "CL"
+      },
+      "description": "Hispafy se especializa en potenciar a las Pymes a través de la automatización con Inteligencia Artificial, ofreciendo soluciones en marketing digital, chatbots, y agentes de IA para aumentar ventas y eficiencia.",
+      "servesCuisine": "",
+      "priceRange": "$$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+"Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#">
+                   <svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#38bdf8"/>
+                                <stop offset="100%" stop-color="#c084fc"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Icono -->
+                        <circle cx="15" cy="20" r="5" fill="url(#logoGradient3)"/>
+                        <circle cx="30" cy="10" r="3" fill="url(#logoGradient3)"/>
+                        <circle cx="30" cy="30" r="3" fill="url(#logoGradient3)"/>
+                        <line x1="19" y1="17" x2="28" y2="12" stroke="url(#logoGradient3)" stroke-width="1.5"/>
+                        <line x1="19" y1="23" x2="28" y2="28" stroke="url(#logoGradient3)" stroke-width="1.5"/>
+                        <!-- Texto -->
+                        <text x="45" y="30" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#E5E7EB">
+                            hispafy
+                        </text>
+                    </svg>
+                </a>
+                <!-- Group nav and button for desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <nav class="flex items-center space-x-8">
+                        <a href="#services" class="text-gray-300 hover:text-sky-400 transition">Servicios</a>
+                        <a href="#about" class="text-gray-300 hover:text-sky-400 transition">Nosotros</a>
+                        <a href="#blog" class="text-gray-300 hover:text-sky-400 transition">Blog</a>
+                        <a href="#contact" class="text-gray-300 hover:text-sky-400 transition">Contacto</a>
+                    </nav>
+                    <a href="#contact" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2 rounded-lg transition-transform duration-300 hover:scale-105">
+                        Solicitar Demo
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/80 backdrop-blur-sm">
+            <a href="#services" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Servicios</a>
+            <a href="#about" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Nosotros</a>
+            <a href="#blog" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Blog</a>
+            <a href="#contact" class="block text-center py-3 px-6 text-gray-300 hover:bg-gray-800">Contacto</a>
+            <div class="p-4">
+                <a href="#contact" class="block text-center w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2 rounded-lg transition">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-screen flex items-center justify-center">
+            <div id="particles-js"></div>
+            <div class="hero-content text-center px-6">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-4">
+                    Más Ventas, Menos Esfuerzo. <span class="gradient-text">Potencia tu Negocio con IA.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                    Pon tu captación de clientes en piloto automático. Nuestros agentes de IA trabajan por ti, incluso mientras duermes.
+                </p>
+                <a href="#services" class="bg-sky-500 hover:bg-sky-600 text-white font-bold text-lg px-8 py-4 rounded-lg transition-transform duration-300 hover:scale-105 inline-block">
+                    Descubre Cómo
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Soluciones de Automatización <span class="gradient-text">para cada Área</span> de tu PYME</h2>
+                    <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                        Optimizamos tus procesos clave en **ventas, marketing, servicio al cliente, operaciones y análisis** para que puedas enfocarte en el crecimiento.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="glass-card p-6 rounded-2xl fade-in-section" style="transition-delay: 100ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-3">🚀 1. Automatización de Marketing Digital</h3>
+                            <p class="text-gray-400 text-sm mb-4">La IA permite personalizar y escalar campañas con mínima intervención humana.</p>
+                            <ul class="text-left text-gray-300 text-sm space-y-2 list-disc list-inside">
+                                <li>Email marketing inteligente y automatizado.</li>
+                                <li>Publicidad programática optimizada en tiempo real.</li>
+                                <li>Generación de contenido para blogs y redes sociales.</li>
+                                <li>Segmentación predictiva para identificar clientes clave.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="glass-card p-6 rounded-2xl fade-in-section" style="transition-delay: 200ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-3">💬 2. Chatbots y Agentes de Atención al Cliente</h3>
+                            <p class="text-gray-400 text-sm mb-4">Apoyo 24/7 con respuestas inteligentes y contextuales.</p>
+                            <ul class="text-left text-gray-300 text-sm space-y-2 list-disc list-inside">
+                                <li>Chatbots multicanal (Web, WhatsApp, etc.).</li>
+                                <li>Asistentes virtuales con memoria y contexto.</li>
+                                <li>Escalado inteligente a agentes humanos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="glass-card p-6 rounded-2xl fade-in-section" style="transition-delay: 300ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-3">🔄 3. Automatización de Flujos de Trabajo</h3>
+                            <p class="text-gray-400 text-sm mb-4">Integra herramientas y procesos internos sin intervención manual.</p>
+                            <ul class="text-left text-gray-300 text-sm space-y-2 list-disc list-inside">
+                                <li>Conexión de apps (Zapier/Make + IA).</li>
+                                <li>Procesamiento automático de documentos (OCR).</li>
+                                <li>Gestión inteligente de tareas y recordatorios.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="glass-card p-6 rounded-2xl fade-in-section" style="transition-delay: 400ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-3">📊 4. Análisis Predictivo y Toma de Decisiones</h3>
+                            <p class="text-gray-400 text-sm mb-4">La IA analiza datos para predecir tendencias y recomendar acciones.</p>
+                            <ul class="text-left text-gray-300 text-sm space-y-2 list-disc list-inside">
+                                <li>Predicción de ventas e ingresos.</li>
+                                <li>Detección de fraudes en tiempo real.</li>
+                                <li>Optimización de inventario y demanda.</li>
+                                <li>Predicción de abandono de clientes (Churn).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Service Card 5 -->
+                    <div class="glass-card p-6 rounded-2xl fade-in-section" style="transition-delay: 500ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-3">🧠 5. Agentes de IA Autónomos</h3>
+                            <p class="text-gray-400 text-sm mb-4">Sistemas que toman decisiones y ejecutan tareas por sí solos.</p>
+                            <ul class="text-left text-gray-300 text-sm space-y-2 list-disc list-inside">
+                                <li>Agentes de ventas para buscar leads y agendar citas.</li>
+                                <li>Agentes de soporte técnico para diagnóstico.</li>
+                                <li>Agentes de investigación de mercado 24/7.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Service Card 6 -->
+                    <div class="glass-card p-6 rounded-2xl fade-in-section" style="transition-delay: 600ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-3">🛠️ 6. Automatización del Desarrollo y TI</h3>
+                            <p class="text-gray-400 text-sm mb-4">Ideal para empresas que desarrollan productos digitales.</p>
+                            <ul class="text-left text-gray-300 text-sm space-y-2 list-disc list-inside">
+                                <li>Generación de código asistida por IA.</li>
+                                <li>Pruebas de calidad (QA) automatizadas.</li>
+                                <li>Monitoreo y corrección de infraestructura.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Service Card 7 -->
+                    <div class="glass-card p-6 rounded-2xl fade-in-section" style="transition-delay: 700ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-3">🏢 7. Recursos Humanos y Contratación</h3>
+                            <p class="text-gray-400 text-sm mb-4">Acelera procesos de reclutamiento y gestión de empleados.</p>
+                            <ul class="text-left text-gray-300 text-sm space-y-2 list-disc list-inside">
+                                <li>Filtrado inteligente de CVs.</li>
+                                <li>Entrevistas iniciales automatizadas.</li>
+                                <li>Procesos de onboarding personalizados.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Service Card 8 -->
+                    <div class="glass-card p-6 rounded-2xl fade-in-section" style="transition-delay: 800ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-3">🌐 8. Automatización de Presencia Digital</h3>
+                            <p class="text-gray-400 text-sm mb-4">Fundamental para pymes que quieren escalar rápido.</p>
+                            <ul class="text-left text-gray-300 text-sm space-y-2 list-disc list-inside">
+                                <li>Creación de sitios web optimizados para SEO.</li>
+                                <li>Gestión y generación de contenido para redes sociales.</li>
+                                <li>Monitoreo y gestión de la reputación online.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section id="packages" class="py-20 md:py-32 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Paquetes de Servicios de <span class="gradient-text">Automatización con IA</span></h2>
+                    <p class="text-lg text-gray-400 max-w-3xl mx-auto">Impulsa tu crecimiento con inteligencia artificial accesible, sin necesidad de equipo técnico.</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- Package 1 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section flex flex-col" style="transition-delay: 100ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold mb-4">✅ 1. Identidad y Presencia Digital Automatizada</h3>
+                            <p class="text-gray-400 mb-6">Para empresas que necesitan arrancar o modernizar su presencia online.</p>
+                            <ul class="text-left text-gray-300 space-y-2 list-disc list-inside">
+                                <li>Creación de sitio web con IA (diseño + contenido)</li>
+                                <li>Optimización SEO automática</li>
+                                <li>Generación de logos, paleta de marca y tono de voz</li>
+                                <li>Publicación inicial en redes sociales (LinkedIn, Instagram, Google Business)</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#contact" class="block bg-sky-600/50 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition text-center">Me Interesa</a>
+                        </div>
+                    </div>
+                    <!-- Package 2 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section flex flex-col" style="transition-delay: 200ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold mb-4">✅ 2. Marketing Digital Inteligente</h3>
+                            <p class="text-gray-400 mb-6">Automatiza campañas que generan leads y ventas 24/7.</p>
+                            <ul class="text-left text-gray-300 space-y-2 list-disc list-inside">
+                                <li>Email marketing con secuencias basadas en comportamiento</li>
+                                <li>Campañas publicitarias autogestionadas (Meta, Google Ads)</li>
+                                <li>Generación de anuncios y creativos con IA</li>
+                                <li>Segmentación predictiva de clientes ideales</li>
+                            </ul>
+                            <p class="mt-4 text-sky-300 font-semibold">📊 Resultados: +50% en conversiones, -30% en costo por lead</p>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#contact" class="block bg-sky-600/50 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition text-center">Me Interesa</a>
+                        </div>
+                    </div>
+                    <!-- Package 3 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section flex flex-col" style="transition-delay: 300ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold mb-4">✅ 3. Chatbot y Atención al Cliente con IA</h3>
+                            <p class="text-gray-400 mb-6">Responde a clientes en segundos, todos los días.</p>
+                            <ul class="text-left text-gray-300 space-y-2 list-disc list-inside">
+                                <li>Chatbot para sitio web y WhatsApp (en español e inglés)</li>
+                                <li>Integración con catálogo, pedidos y políticas</li>
+                                <li>Derivación automática a agentes humanos cuando es necesario</li>
+                                <li>Capacitación con tu base de conocimiento</li>
+                            </ul>
+                             <p class="mt-4 text-gray-400 italic">💬 Ejemplo: “¿Cuál es el precio del plan premium?” → Respuesta instantánea + enlace al checkout</p>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#contact" class="block bg-sky-600/50 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition text-center">Me Interesa</a>
+                        </div>
+                    </div>
+                    <!-- Package 4 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section flex flex-col" style="transition-delay: 400ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold mb-4">✅ 4. Flujos de Trabajo Automatizados</h3>
+                            <p class="text-gray-400 mb-6">Conecta tus herramientas y elimina tareas manuales.</p>
+                             <ul class="text-left text-gray-300 space-y-2 list-disc list-inside">
+                                <li>Desde un lead nuevo hasta una factura generada, todo automático</li>
+                                <li>Sincronización entre web, CRM, email, WhatsApp y contabilidad</li>
+                                <li>Alertas inteligentes y tareas asignadas según prioridad</li>
+                            </ul>
+                            <p class="mt-4 text-gray-400 italic">🔁 Ejemplo: Nuevo contacto → Se agrega a CRM → Recibe email de bienvenida → Se programa llamada → Se notifica al vendedor</p>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#contact" class="block bg-sky-600/50 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition text-center">Me Interesa</a>
+                        </div>
+                    </div>
+                    <!-- Package 5 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section flex flex-col" style="transition-delay: 500ms;">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold mb-4">✅ 5. Agentes de IA Autónomos (Nivel Avanzado)</h3>
+                            <p class="text-gray-400 mb-6">Tu equipo digital que trabaja mientras tú duermes.</p>
+                            <ul class="text-left text-gray-300 space-y-2 list-disc list-inside">
+                                <li>Agente de ventas: busca leads, envía mensajes y agenda citas</li>
+                                <li>Agente de soporte: resuelve dudas técnicas y guía al cliente</li>
+                                <li>Agente de monitoreo: revisa redes, precios de competencia y alerta cambios</li>
+                            </ul>
+                            <p class="mt-4 text-purple-400 font-semibold">🧠 Basado en IA generativa (LLMs) con memoria y objetivos claros</p>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#contact" class="block bg-sky-600/50 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition text-center">Me Interesa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories Section -->
+        <section id="success-stories" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Resultados Reales para <span class="gradient-text">Pymes como la Tuya</span></h2>
+                    <p class="text-lg text-gray-400 max-w-3xl mx-auto">No solo hablamos de tecnología, generamos impacto medible en el negocio.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Story 1 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section flex flex-col" style="transition-delay: 100ms;">
+                        <span class="text-5xl font-black gradient-text">+150%</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">En Ventas Online</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">Para un e-commerce de moda, implementamos un chatbot con IA que recuperaba carritos abandonados y ofrecía recomendaciones personalizadas, disparando la tasa de conversión.</p>
+                        <a href="#" class="font-semibold text-sky-400 hover:text-sky-300 transition group">Ver Caso de Estudio <span class="inline-block transition-transform group-hover:translate-x-1">→</span></a>
+                    </div>
+                    <!-- Story 2 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section flex flex-col" style="transition-delay: 200ms;">
+                        <span class="text-5xl font-black gradient-text">-40%</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">En Costo por Lead</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">Para una consultora B2B, automatizamos las campañas de Google Ads con IA, optimizando la puja y la segmentación en tiempo real para atraer leads de mayor calidad a un menor costo.</p>
+                        <a href="#" class="font-semibold text-sky-400 hover:text-sky-300 transition group">Ver Caso de Estudio <span class="inline-block transition-transform group-hover:translate-x-1">→</span></a>
+                    </div>
+                    <!-- Story 3 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section flex flex-col" style="transition-delay: 300ms;">
+                        <span class="text-5xl font-black gradient-text">+80%</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">De Tareas Repetitivas Automatizadas</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">Para una empresa de servicios, conectamos su formulario web, CRM y sistema de facturación, eliminando la entrada manual de datos y liberando horas de trabajo administrativo.</p>
+                        <a href="#" class="font-semibold text-sky-400 hover:text-sky-300 transition group">Ver Caso de Estudio <span class="inline-block transition-transform group-hover:translate-x-1">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 md:py-32 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2 fade-in-section">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600&auto=format&fit=crop" alt="Equipo de Hispafy colaborando en estrategias de automatización IA" class="rounded-2xl shadow-2xl">
+                    </div>
+                    <div class="lg:w-1/2 fade-in-section" style="transition-delay: 200ms;">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Tu Socio <span class="gradient-text">Tecnológico</span></h2>
+                        <p class="text-lg text-gray-400 mb-6">
+                            Hispafy nació en 2020 en Santiago, Chile, como una agencia de marketing digital con una visión clara: entendimos desde el primer día que la clave del éxito es la constante actualización y la pasión por el marketing. Esta visión nos ha permitido crecer y ser un aporte real y medible para cada empresa que hemos ayudado. Nuestro compromiso es nuestra cualidad principal; asumimos cada desafío como si fuera nuestro, convirtiéndonos en tu socio tecnológico para el crecimiento.
+                        </p>
+                        <a href="#contact" class="text-sky-400 font-semibold hover:text-sky-300 transition group">
+                            Hablemos de tu proyecto <span class="inline-block transition-transform group-hover:translate-x-2">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Lo que Dicen <span class="gradient-text">Nuestros Clientes</span></h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section" style="transition-delay: 100ms;">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/48x48/e0e7ff/312e81?text=JL" alt="Judy Lorca S." class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-white">Judy Lorca S.</p>
+                                <p class="text-sm text-gray-400">Gerente Contralor Ineex</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">"El agente de IA que Hispafy implementó para nosotros se convirtió en nuestro mejor vendedor. Agenda reuniones por sí solo y nos ahorra incontables horas. ¡Increíble!"</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="glass-card p-8 rounded-2xl fade-in-section" style="transition-delay: 200ms;">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/48x48/fce7f3/831843?text=AB" alt="Airton Blasco E." class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-white">Airton Blasco E.</p>
+                                <p class="text-sm text-gray-400">Gerente General Evaluacorp S.A.</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">"No teníamos equipo de marketing, y ahora tenemos campañas corriendo en piloto automático que nos traen clientes todos los días. Cambió las reglas del juego para nosotros."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 md:py-32 bg-gray-900/50">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Preguntas <span class="gradient-text">Frecuentes</span></h2>
+                </div>
+                <div class="space-y-4 fade-in-section">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gray-800/50 border border-gray-700 rounded-lg">
+                        <div class="faq-question p-6 flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-white">¿Necesito tener conocimientos técnicos?</h3>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6 text-gray-400">
+                            <p>Para nada. Nuestro lema es "IA sin equipo técnico". Nos encargamos de toda la configuración, implementación y mantenimiento. Tú solo te enfocas en los resultados para tu negocio.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gray-800/50 border border-gray-700 rounded-lg">
+                        <div class="faq-question p-6 flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-white">¿Cuánto tiempo tarda la implementación?</h3>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6 text-gray-400">
+                            <p>Depende del paquete y la complejidad. Una implementación de chatbot puede tomar de 1 a 2 semanas, mientras que un sistema completo de agentes autónomos puede llevar de 4 a 6 semanas. Siempre establecemos una hoja de ruta clara desde el inicio.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-gray-800/50 border border-gray-700 rounded-lg">
+                        <div class="faq-question p-6 flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-white">¿Con qué herramientas se pueden integrar?</h3>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6 text-gray-400">
+                            <p>Nos integramos con cientos de las herramientas más populares que usan las pymes, incluyendo CRMs (HubSpot, Salesforce), plataformas de email (Mailchimp), herramientas de comunicación (Slack, WhatsApp) y mucho más, a través de plataformas como Zapier y Make.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-gray-800/50 border border-gray-700 rounded-lg">
+                        <div class="faq-question p-6 flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-white">¿Qué tipo de soporte ofrecen después del lanzamiento?</h3>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform"></i>
+                        </div>
+                        <div class="faq-answer px-6 pb-6 text-gray-400">
+                            <p>Ofrecemos soporte continuo y planes de optimización. No solo lanzamos el proyecto y desaparecemos. Monitoreamos el rendimiento de las automatizaciones y proactivamente sugerimos mejoras para asegurar que siempre obtengas el máximo retorno de tu inversión.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Desde Nuestro <span class="gradient-text">Blog</span></h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">Ideas, tendencias y consejos sobre IA y marketing digital para PYMES.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="glass-card rounded-2xl overflow-hidden fade-in-section" style="transition-delay: 100ms;">
+                        <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=600&auto=format&fit=crop" alt="Chatbot en un smartphone ayudando a un cliente a comprar" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <p class="text-sm text-sky-400 mb-2">Inteligencia Artificial</p>
+                            <h3 class="text-xl font-bold mb-3 flex-grow">5 formas en que un chatbot con IA puede duplicar tus ventas</h3>
+                            <p class="text-gray-400 mb-4">Descubre cómo la atención al cliente 24/7 y la cualificación automática de leads...</p>
+                            <a href="#" class="font-semibold text-white hover:text-sky-300 transition group blog-link" data-post="1">
+                                Leer más <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 2 -->
+                    <div class="glass-card rounded-2xl overflow-hidden fade-in-section" style="transition-delay: 200ms;">
+                        <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=600&auto=format&fit=crop" alt="Panel de control de marketing digital mostrando gráficos de crecimiento" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <p class="text-sm text-sky-400 mb-2">Marketing Digital</p>
+                            <h3 class="text-xl font-bold mb-3 flex-grow">La guía definitiva de la automatización de marketing para PYMES</h3>
+                            <p class="text-gray-400 mb-4">Desde el email marketing hasta la gestión de redes sociales, te mostramos cómo...</p>
+                            <a href="#" class="font-semibold text-white hover:text-sky-300 transition group blog-link" data-post="2">
+                                Leer más <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class="glass-card rounded-2xl overflow-hidden fade-in-section" style="transition-delay: 300ms;">
+                        <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" alt="Robot humanoide futurista representando un agente de IA autónomo" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <p class="text-sm text-sky-400 mb-2">Tendencias</p>
+                            <h3 class="text-xl font-bold mb-3 flex-grow">Más allá de los chatbots: El futuro de los agentes IA autónomos</h3>
+                            <p class="text-gray-400 mb-4">Imagina un agente IA que no solo responde preguntas, sino que ejecuta tareas complejas...</p>
+                            <a href="#" class="font-semibold text-white hover:text-sky-300 transition group blog-link" data-post="3">
+                                Leer más <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Impulsemos <span class="gradient-text">tu Futuro</span></h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">¿Listo para transformar tu negocio? Completa el formulario y uno de nuestros especialistas se pondrá en contacto contigo.</p>
+                </div>
+                <div class="max-w-2xl mx-auto fade-in-section" style="transition-delay: 200ms;">
+                    <form id="contact-form" class="space-y-6">
+                        <input type="hidden" name="access_key" value="a17753b0-cf9a-4c0b-8c07-1c902e7deefb">
+                        <input type="hidden" name="subject" value="Nuevo Mensaje de Contacto desde Hispafy.com">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nombre</label>
+                            <input type="text" id="name" name="name" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition" placeholder="Tu nombre completo">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition" placeholder="tu@empresa.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">¿Cómo podemos ayudarte?</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition" placeholder="Cuéntanos sobre tu proyecto o tus necesidades..."></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white font-bold text-lg px-8 py-3 rounded-lg transition-transform duration-300 hover:scale-105 w-full md:w-auto">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                        <div id="form-result" class="text-center mt-4"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="text-center md:text-left">
+                    <a href="#">
+                       <svg width="150" height="33" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logoGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#38bdf8"/>
+                                    <stop offset="100%" stop-color="#c084fc"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="15" cy="20" r="5" fill="url(#logoGradientFooter)"/>
+                            <circle cx="30" cy="10" r="3" fill="url(#logoGradientFooter)"/>
+                            <circle cx="30" cy="30" r="3" fill="url(#logoGradientFooter)"/>
+                            <line x1="19" y1="17" x2="28" y2="12" stroke="url(#logoGradientFooter)" stroke-width="1.5"/>
+                            <line x1="19" y1="23" x2="28" y2="28" stroke="url(#logoGradientFooter)" stroke-width="1.5"/>
+                            <text x="45" y="30" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#E5E7EB">
+                                hispafy
+                            </text>
+                        </svg>
+                    </a>
+                    <p class="text-gray-500 mt-2">Automatizando el futuro de las PYMES.</p>
+                    <div class="mt-4 text-gray-500 text-sm">
+                        <p>contacto@hispafy.com</p>
+                        <p>Santiago, Chile</p>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://x.com/hispafy" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition" aria-label="Twitter de Hispafy"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                    <a href="https://web.facebook.com/profile.php?id=61573429086260" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition" aria-label="Facebook de Hispafy"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                    <a href="https://www.linkedin.com/in/hispafy-agency-76545537b/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition" aria-label="LinkedIn de Hispafy"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    <a href="https://www.instagram.com/hispafy/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition" aria-label="Instagram de Hispafy"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                </div>
+                <div class="text-center text-gray-500">
+                    &copy; 2025 Hispafy. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Blog Post Modal -->
+    <div id="blog-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70 backdrop-blur-sm opacity-0 pointer-events-none">
+        <div id="blog-modal-content" class="bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto transform scale-95">
+            <div class="sticky top-0 bg-gray-900/80 backdrop-blur-sm p-6 flex justify-between items-center border-b border-gray-700">
+                <h2 id="modal-title" class="text-2xl font-bold gradient-text"></h2>
+                <button id="close-modal-button" class="text-gray-400 hover:text-white">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+            </div>
+            <div id="modal-body" class="p-8 prose prose-dark max-w-none">
+                <!-- Blog content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <!-- Chatbot Toggle Button -->
+        <button id="chatbot-toggle" class="bg-gradient-to-r from-sky-500 to-purple-500 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+        </button>
+        <!-- Chat Widget -->
+        <div id="chat-widget" class="hidden absolute bottom-20 right-0 w-80 md:w-96 bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-2xl shadow-2xl transform translate-y-4 opacity-0">
+            <div class="p-4 bg-gray-800/50 rounded-t-2xl flex justify-between items-center">
+                <h3 class="font-bold text-white">Asistente Virtual Hispafy</h3>
+                <button id="close-chat-widget" class="text-gray-400 hover:text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div id="chat-body" class="p-4 h-80 overflow-y-auto space-y-4">
+                <!-- Messages will be appended here -->
+            </div>
+            <div id="chat-options" class="p-4 border-t border-gray-700">
+                 <!-- Options will be appended here -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Header Style on Scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900/80', 'backdrop-blur-sm', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-gray-900/80', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+
+        // Fade-in Sections on Scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Blog Modal Logic
+        const blogPosts = {
+            '1': {
+                title: '5 formas en que un chatbot con IA puede duplicar tus ventas',
+                content: `
+                    <p class="lead">En el competitivo mercado actual, cada lead cuenta. Perder una oportunidad porque un cliente potencial visitó tu web fuera del horario comercial es un lujo que las PYMES no pueden permitirse. Aquí es donde los chatbots con IA se convierten en tu mejor vendedor, trabajando 24/7 para ti. Veamos cómo.</p>
+                    <h3>1. Captura de Leads 24/7</h3>
+                    <p>Tu web no duerme, y tus clientes tampoco. Un chatbot con IA está siempre activo para interactuar con los visitantes, responder preguntas básicas y, lo más importante, capturar su información de contacto (nombre, email, teléfono) para que tu equipo de ventas pueda hacer seguimiento. Nunca más perderás un lead por estar "cerrado".</p>
+                    <h3>2. Cualificación Instantánea de Leads</h3>
+                    <p>No todos los leads son iguales. Un chatbot puede hacer preguntas clave para cualificar a los visitantes en tiempo real. Al preguntar sobre su presupuesto, necesidades o plazos, puede identificar a los "leads calientes" y transferirlos inmediatamente a un agente humano disponible o agendar una llamada para más tarde, asegurando que tu equipo de ventas invierta su tiempo en las oportunidades más prometedoras.</p>
+                    <h3>3. Agendamiento Automático de Demos y Citas</h3>
+                    <p>Elimina la fricción y los interminables correos para coordinar una reunión. Un chatbot integrado con tu calendario (como Google Calendar o Calendly) puede mostrar tu disponibilidad y permitir que los leads agenden una demo o una consulta directamente desde el chat, en segundos.</p>
+                    <h3>4. Upselling y Cross-selling Personalizado</h3>
+                    <p>Un chatbot inteligente puede analizar el comportamiento de un usuario en tu sitio web. Si un cliente está viendo un producto, el bot puede sugerir accesorios complementarios (cross-selling) o una versión premium con más funcionalidades (upselling), aumentando el valor promedio de cada venta de forma proactiva.</p>
+                    <h3>5. Reducción del Abandono de Carrito</h3>
+                    <p>En un e-commerce, un chatbot puede detectar cuándo un usuario está a punto de abandonar la página de pago. En ese momento, puede intervenir ofreciendo ayuda, respondiendo preguntas sobre el envío o incluso presentando un pequeño descuento por tiempo limitado para incentivar la finalización de la compra. Esta simple acción puede recuperar un porcentaje significativo de ventas perdidas.</p>
+                    <blockquote>En resumen, un chatbot con IA no es solo un contestador automático; es un motor de ventas proactivo que cualifica, agenda y convierte, permitiendo a tu equipo humano centrarse en cerrar los tratos más importantes.</blockquote>
+                `
+            },
+            '2': {
+                title: 'La guía definitiva de la automatización de marketing para PYMES',
+                content: `
+                    <p class="lead">La automatización del marketing ya no es un privilegio de las grandes corporaciones. Para una PYME, es la clave para competir en ligas mayores, permitiéndote hacer más con menos. Se trata de usar software para automatizar tareas de marketing repetitivas y nutrir a los prospectos con contenido personalizado que los convierte en clientes.</p>
+                    <h3>Pilar 1: Email Marketing Inteligente</h3>
+                    <p>Olvida los envíos masivos y genéricos. La automatización te permite enviar el mensaje correcto, a la persona correcta, en el momento correcto. Crea flujos de trabajo (workflows) que se activan por el comportamiento del usuario:</p>
+                    <ul>
+                        <li><strong>Serie de bienvenida:</strong> Una secuencia de correos automáticos para nuevos suscriptores.</li>
+                        <li><strong>Abandono de carrito:</strong> Recordatorios automáticos para usuarios que dejaron productos en su carrito.</li>
+                        <li><strong>Emails basados en intereses:</strong> Envía contenido relacionado con las páginas que un usuario ha visitado en tu web.</li>
+                    </ul>
+                    <h3>Pilar 2: Gestión de Redes Sociales Automatizada</h3>
+                    <p>Mantener una presencia activa en redes sociales consume mucho tiempo. La automatización te ayuda a programar publicaciones con meses de antelación, reutilizar contenido exitoso y monitorizar menciones de tu marca. Herramientas con IA pueden incluso sugerirte los mejores horarios para publicar o generar ideas de contenido basadas en tendencias.</p>
+                    <h3>Pilar 3: Flujos de Nutrición de Leads (Lead Nurturing)</h3>
+                    <p>La mayoría de los leads no están listos para comprar en el primer contacto. El "lead nurturing" es el proceso de construir una relación con ellos, proporcionando valor a lo largo del tiempo. Un flujo automatizado puede enviarles una serie de emails con casos de estudio, guías útiles o webinars, educándolos y posicionando a tu empresa como la solución experta hasta que estén listos para la compra.</p>
+                    <h3>Pilar 4: Publicidad Programática Eficiente</h3>
+                    <p>Gestionar campañas en Google Ads o Meta Ads puede ser complejo. La IA en la publicidad programática optimiza tus campañas automáticamente. Analiza qué audiencias, anuncios y palabras clave están generando los mejores resultados y reasigna tu presupuesto en tiempo real para maximizar el retorno de la inversión (ROI), eliminando las conjeturas.</p>
+                    <blockquote>La verdadera magia de la automatización del marketing reside en la integración. Cuando tu email, redes sociales y publicidad trabajan juntos, creas una experiencia de cliente cohesiva y altamente efectiva que impulsa el crecimiento de manera sostenible.</blockquote>
+                `
+            },
+            '3': {
+                title: 'Más allá de los chatbots: El futuro de los agentes IA autónomos',
+                content: `
+                    <p class="lead">Hemos hablado de chatbots, que son excelentes para responder preguntas y seguir guiones. Pero la próxima revolución ya está aquí: los agentes de IA autónomos. La diferencia es fundamental: un chatbot es reactivo, un agente de IA es proactivo. No sigue un guion, tiene un objetivo y la capacidad de planificar y ejecutar tareas para alcanzarlo.</p>
+                    <h3>¿Qué es un Agente de IA Autónomo?</h3>
+                    <p>Imagina que le das a un asistente un objetivo: "Consígueme 10 reuniones con directores de marketing de empresas de software este mes". Un asistente humano investigaría empresas, buscaría contactos, redactaría emails y haría seguimiento. Un agente de IA autónomo hace exactamente lo mismo, pero de forma digital y a una escala masiva. Puede navegar por la web, usar herramientas como LinkedIn, enviar correos electrónicos y tomar decisiones para cumplir su objetivo.</p>
+                    <h3>Aplicación 1: Agentes de Ventas Autónomos</h3>
+                    <p>Estos agentes son tu equipo de prospección incansable. Realizan la investigación de mercado, identifican leads potenciales que se ajustan a tu perfil de cliente ideal, encuentran su información de contacto y ejecutan campañas de outreach personalizadas. Solo involucran a un vendedor humano cuando el lead muestra interés o agenda una reunión. Esto libera a tu equipo de ventas para que se concentre exclusivamente en cerrar tratos.</p>
+                    <h3>Aplicación 2: Agentes de Investigación de Mercado</h3>
+                    <p>Puedes asignarles tareas como: "Monitoriza a nuestros 5 principales competidores y envíame un informe semanal con sus nuevos lanzamientos, cambios de precios y campañas de marketing". El agente de IA navegará por sus sitios web, redes sociales y noticias, y te entregará un resumen consolidado y analizado, dándote una ventaja competitiva constante.</p>
+                    <h3>Aplicación 3: Agentes de Soporte Proactivo</h3>
+                    <p>En lugar de esperar a que un cliente informe de un problema, un agente de IA puede monitorear el uso de tu software o servicio. Si detecta que un usuario está teniendo dificultades con una función, puede enviarle proactivamente una guía, un tutorial en video o incluso ofrecerle ayuda en tiempo real, mejorando drásticamente la satisfacción y la retención del cliente.</p>
+                    <blockquote>Los agentes de IA autónomos no son ciencia ficción. Son la siguiente evolución de la automatización, una herramienta que permitirá a las PYMES más ágiles operar con la eficiencia y la inteligencia de una gran corporación. En Hispafy, estamos en la vanguardia de esta tecnología, listos para implementarla para tu negocio.</blockquote>
+                `
+            }
+        };
+
+        const modal = document.getElementById('blog-modal');
+        const modalContent = document.getElementById('blog-modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeModalButton = document.getElementById('close-modal-button');
+        const blogLinks = document.querySelectorAll('.blog-link');
+
+        function openModal(post) {
+            modalTitle.textContent = post.title;
+            modalBody.innerHTML = post.content;
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+        }
+
+        function closeModal() {
+            document.body.style.overflow = 'auto';
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('pointer-events-none');
+            }, 300); // Wait for transition to finish
+        }
+
+        blogLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const postId = link.getAttribute('data-post');
+                const post = blogPosts[postId];
+                if (post) {
+                    openModal(post);
+                }
+            });
+        });
+
+        closeModalButton.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
+                closeModal();
+            }
+        });
+
+        // FAQ Accordion Logic
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.lucide'); // Corrected selector
+
+                if (answer && icon) {
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                }
+            });
+        });
+        
+        // Chatbot Logic
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatWidget = document.getElementById('chat-widget');
+        const closeChatWidget = document.getElementById('close-chat-widget');
+        const chatBody = document.getElementById('chat-body');
+        const chatOptions = document.getElementById('chat-options');
+
+        const openChat = () => {
+            chatWidget.classList.remove('hidden');
+            setTimeout(() => {
+                chatWidget.classList.remove('opacity-0', 'translate-y-4');
+            }, 10);
+            addBotMessage("¡Hola! 👋 Soy el asistente de Hispafy. ¿Cómo puedo ayudarte hoy?");
+            showInitialOptions();
+        };
+
+        const closeChat = () => {
+            chatWidget.classList.add('opacity-0', 'translate-y-4');
+            setTimeout(() => {
+                chatWidget.classList.add('hidden');
+                chatBody.innerHTML = '';
+                chatOptions.innerHTML = '';
+            }, 300);
+        };
+
+        const addBotMessage = (message) => {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'chat-message flex';
+            messageElement.innerHTML = `
+                <div class="bg-gray-700 text-white p-3 rounded-lg max-w-xs">
+                    <p class="text-sm">${message}</p>
+                </div>
+            `;
+            chatBody.appendChild(messageElement);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        };
+        
+        const addUserMessage = (message) => {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'chat-message flex justify-end';
+            messageElement.innerHTML = `
+                <div class="bg-sky-500 text-white p-3 rounded-lg max-w-xs">
+                    <p class="text-sm">${message}</p>
+                </div>
+            `;
+            chatBody.appendChild(messageElement);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        };
+
+        const showInitialOptions = () => {
+            chatOptions.innerHTML = '';
+            const options = [
+                { text: 'Quiero saber más de los servicios', action: 'showServices' },
+                { text: 'Hablar con un especialista', action: 'contactSpecialist' }
+            ];
+            options.forEach(opt => {
+                const button = document.createElement('button');
+                button.className = 'w-full text-left text-sm bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-lg transition mb-2';
+                button.textContent = opt.text;
+                button.onclick = () => handleOptionClick(opt.action, opt.text);
+                chatOptions.appendChild(button);
+            });
+        };
+        
+        const handleOptionClick = (action, text) => {
+            addUserMessage(text);
+            chatOptions.innerHTML = ''; // Clear options after click
+
+            setTimeout(() => {
+                switch (action) {
+                    case 'showServices':
+                        addBotMessage("¡Claro! Nuestros servicios principales son:");
+                        setTimeout(() => addBotMessage("🚀 Automatización de Marketing"), 500);
+                        setTimeout(() => addBotMessage("💬 Chatbots y Atención al Cliente con IA"), 1000);
+                        setTimeout(() => addBotMessage("🔄 Flujos de Trabajo Automatizados"), 1500);
+                        setTimeout(() => {
+                            addBotMessage("¿Te gustaría ver nuestros paquetes con más detalle o prefieres hablar con alguien?");
+                            showContactOrServicesRedirect();
+                        }, 2000);
+                        break;
+                    case 'contactSpecialist':
+                        addBotMessage("Perfecto. La mejor forma es completar nuestro formulario de contacto. Un especialista se comunicará contigo a la brevedad. ¿Te gustaría que te lleve al formulario?");
+                         showContactRedirect();
+                        break;
+                }
+            }, 500);
+        };
+
+        const showContactOrServicesRedirect = () => {
+             chatOptions.innerHTML = '';
+             const options = [
+                { text: 'Ver paquetes', href: '#packages' },
+                { text: 'Hablar con un especialista', action: 'contactSpecialist' }
+            ];
+            options.forEach(opt => {
+                const button = document.createElement('button');
+                button.className = 'w-full text-left text-sm bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-lg transition mb-2';
+                button.textContent = opt.text;
+                if (opt.href) {
+                     button.onclick = () => {
+                        window.location.href = opt.href;
+                        closeChat();
+                     };
+                } else {
+                    button.onclick = () => handleOptionClick(opt.action, opt.text);
+                }
+                chatOptions.appendChild(button);
+            });
+        };
+        
+        const showContactRedirect = () => {
+             chatOptions.innerHTML = '';
+             const button = document.createElement('button');
+             button.className = 'w-full text-left text-sm bg-sky-500 hover:bg-sky-600 text-white p-2 rounded-lg transition mb-2';
+             button.textContent = 'Sí, ir al formulario de contacto';
+             button.onclick = () => {
+                window.location.href = '#contact';
+                closeChat();
+             };
+             chatOptions.appendChild(button);
+        };
+
+        chatbotToggle.addEventListener('click', () => {
+            if (chatWidget.classList.contains('hidden')) {
+                openChat();
+            } else {
+                closeChat();
+            }
+        });
+        closeChatWidget.addEventListener('click', closeChat);
+
+        // Contact Form Logic with Web3Forms
+        const form = document.getElementById('contact-form');
+        const formResult = document.getElementById('form-result');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = {};
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
+            const json = JSON.stringify(object);
+            formResult.innerHTML = "Enviando...";
+
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        formResult.innerHTML = "¡Formulario enviado con éxito!";
+                        formResult.classList.add('text-green-500');
+                    } else {
+                        console.log(response);
+                        formResult.innerHTML = json.message;
+                         formResult.classList.add('text-red-500');
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    formResult.innerHTML = "Algo salió mal. Inténtalo de nuevo.";
+                    formResult.classList.add('text-red-500');
+                })
+                .then(function() {
+                    form.reset();
+                    setTimeout(() => {
+                        formResult.innerHTML = '';
+                        formResult.classList.remove('text-green-500', 'text-red-500');
+                    }, 5000);
+                });
+        });
+
+
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#38bdf8"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#818cf8",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
